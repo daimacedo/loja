@@ -8,11 +8,10 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/resources/features", 
-glue = { "stepdefs" }, 
-tags = { "~@NotRun" }, 
+glue = { "stepdefinitions" }, 
+tags = { "@CompraComCartao , @RemocaoItensDoCarrinho" }, 
 format = {
 		"pretty", "html:target/cucumber-reports/report"})
-
 public class RunTest{
 
 }

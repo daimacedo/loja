@@ -17,7 +17,6 @@ public class SetUp extends URLs {
 	protected static WebDriver driver;
 	
 	public SetUp() {
-				
 		WebDriverManager.firefoxdriver().setup();
 		driver = new FirefoxDriver();
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -25,7 +24,7 @@ public class SetUp extends URLs {
 		driver.get(HOME_URL);
 	}
 
-	@org.junit.After
+	@AfterClass
 	public void tearDown(){
 		driver.quit();
 	}

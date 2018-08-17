@@ -1,3 +1,4 @@
+@RemocaoItensDoCarrinho
 Feature: Remover itens do carrinho de Compras
  	Como usuário do ecommerce
   Eu desejo remover itens indesejados do meu carrinho de compras

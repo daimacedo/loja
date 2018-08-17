@@ -1,4 +1,4 @@
-@NotRun
+@CompraComCartao
 Feature: Realizar compras com cartão de crédito
  	Como usuário do ecommerce
   Eu quero inserir produtos no meu carrinho de compras
