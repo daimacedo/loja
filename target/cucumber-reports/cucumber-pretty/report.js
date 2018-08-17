@@ -2,107 +2,29 @@ $(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.
 formatter.feature({
   "line": 1,
   "name": "Realizar compras com cartão de crédito",
-  "description": "Como usuário do ecommerce\r\nEu quero inserir produtos produtos no meu carrinho de compras\r\nPara realizar uma compra com forma da pagamento cartão de crédito",
+  "description": "Como usuário do ecommerce\r\nEu quero inserir produtos no meu carrinho de compras\r\nPara realizar uma compra com forma da pagamento cartão de crédito",
   "id": "realizar-compras-com-cartão-de-crédito",
   "keyword": "Feature"
 });
-formatter.scenarioOutline({
+formatter.scenario({
   "line": 6,
-  "name": "Compra com Cartão de Crédito",
+  "name": "Comprar uma unidade do produto com Cartão de Crédito",
   "description": "",
-  "id": "realizar-compras-com-cartão-de-crédito;compra-com-cartão-de-crédito",
-  "type": "scenario_outline",
-  "keyword": "Scenario Outline"
+  "id": "realizar-compras-com-cartão-de-crédito;comprar-uma-unidade-do-produto-com-cartão-de-crédito",
+  "type": "scenario",
+  "keyword": "Scenario"
 });
 formatter.step({
-  "line": 7,
-  "name": "Eu esteja logado no sistema",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 8,
-  "name": "Eu devo ver a mensagem de Olá",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 9,
-  "name": "Consultar um produto",
-  "keyword": "When "
-});
-formatter.step({
-  "line": 10,
-  "name": "Eu seguir para a pagina de detalhes",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "Eu adicionar ao carrinho a quantidade \u003cqtdProduto\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "Eu selecionar a forma da pagamento \"Cartão de Crédito\"",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "check more outcomes",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "A mensagem \"Pagar com cartão de crédito\" deve ser exibida.",
-  "keyword": "Then "
-});
-formatter.examples({
-  "line": 17,
-  "name": "",
-  "description": "",
-  "id": "realizar-compras-com-cartão-de-crédito;compra-com-cartão-de-crédito;",
-  "rows": [
+  "comments": [
     {
-      "cells": [
-        "qtdProduto"
-      ],
-      "line": 18,
-      "id": "realizar-compras-com-cartão-de-crédito;compra-com-cartão-de-crédito;;1"
+      "line": 7,
+      "value": "#Given Eu esteja logado no sistema"
     },
     {
-      "cells": [
-        "1"
-      ],
-      "line": 19,
-      "id": "realizar-compras-com-cartão-de-crédito;compra-com-cartão-de-crédito;;2"
-    },
-    {
-      "cells": [
-        "2"
-      ],
-      "line": 20,
-      "id": "realizar-compras-com-cartão-de-crédito;compra-com-cartão-de-crédito;;3"
+      "line": 8,
+      "value": "#Then Eu devo ver a mensagem de Olá Teste"
     }
   ],
-  "keyword": "Examples"
-});
-formatter.scenario({
-  "line": 19,
-  "name": "Compra com Cartão de Crédito",
-  "description": "",
-  "id": "realizar-compras-com-cartão-de-crédito;compra-com-cartão-de-crédito;;2",
-  "type": "scenario",
-  "keyword": "Scenario Outline"
-});
-formatter.step({
-  "line": 7,
-  "name": "Eu esteja logado no sistema",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 8,
-  "name": "Eu devo ver a mensagem de Olá",
-  "keyword": "Then "
-});
-formatter.step({
   "line": 9,
   "name": "Consultar um produto",
   "keyword": "When "
@@ -114,10 +36,7 @@ formatter.step({
 });
 formatter.step({
   "line": 11,
-  "name": "Eu adicionar ao carrinho a quantidade 1",
-  "matchedColumns": [
-    0
-  ],
+  "name": "Eu adicionar 1 unidade do produto ao carrinho",
   "keyword": "And "
 });
 formatter.step({
@@ -127,51 +46,35 @@ formatter.step({
 });
 formatter.step({
   "line": 13,
-  "name": "check more outcomes",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
   "name": "A mensagem \"Pagar com cartão de crédito\" deve ser exibida.",
   "keyword": "Then "
-});
-formatter.match({
-  "location": "CompraComCartaoTest.eu_esteja_logado_no_sistema()"
-});
-formatter.result({
-  "duration": 2785220939,
-  "error_message": "org.openqa.selenium.WebDriverException: Element \u003ca id\u003d\"h_usr-signin\" class\u003d\"rp-primary rp h_btn-secondary h_btn usr-signin\" href\u003d\"https://cliente.americanas.com.br/simple-login/?next\u003dhttps%3A%2F%2Fwww.americanas.com.br%2F\"\u003e is not clickable at point (1122.0999755859375,157.88333129882812) because another element \u003ca id\u003d\"h_usr-signin\" class\u003d\"rp-primary rp h_btn-secondary h_btn usr-signin\" href\u003d\"https://cliente.americanas.com.br/simple-login/?next\u003dhttps%3A%2F%2Fwww.americanas.com.br%2F\"\u003e obscures it\nBuild info: version: \u00273.5.3\u0027, revision: \u0027a88d25fe6b\u0027, time: \u00272017-08-29T12:42:44.417Z\u0027\nSystem info: host: \u0027dls210\u0027, ip: \u0027127.0.1.1\u0027, os.name: \u0027Linux\u0027, os.arch: \u0027amd64\u0027, os.version: \u00274.5.0-040500-generic\u0027, java.version: \u00271.8.0_171\u0027\nDriver info: org.openqa.selenium.firefox.FirefoxDriver\nCapabilities [{moz:profile\u003d/tmp/rust_mozprofile.d6GpnIqe2ls0, rotatable\u003dfalse, timeouts\u003d{implicit\u003d0, pageLoad\u003d300000, script\u003d30000}, pageLoadStrategy\u003dnormal, moz:headless\u003dfalse, platform\u003dLINUX, moz:accessibilityChecks\u003dfalse, moz:useNonSpecCompliantPointerOrigin\u003dfalse, acceptInsecureCerts\u003dfalse, browserVersion\u003d60.0.2, platformVersion\u003d4.5.0-040500-generic, moz:processID\u003d29763, browserName\u003dfirefox, javascriptEnabled\u003dtrue, platformName\u003dLINUX, moz:webdriverClick\u003dtrue}]\nSession ID: a55a5f25-033c-4dce-b4d6-9546f5b57ea3\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:646)\n\tat org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:275)\n\tat org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:82)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:498)\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)\n\tat com.sun.proxy.$Proxy17.click(Unknown Source)\n\tat pages.HomePage.acessarPaginaLogin(HomePage.java:32)\n\tat stepdefs.CompraComCartaoTest.eu_esteja_logado_no_sistema(CompraComCartaoTest.java:16)\n\tat ✽.Given Eu esteja logado no sistema(CompraComCartao.feature:7)\n",
-  "status": "failed"
-});
-formatter.match({
-  "location": "CompraComCartaoTest.eu_devo_ver_a_mensagem_de_Olá()"
-});
-formatter.result({
-  "status": "skipped"
 });
 formatter.match({
   "location": "CompraComCartaoTest.consultar_um_produto()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 6019765392,
+  "status": "passed"
 });
 formatter.match({
   "location": "CompraComCartaoTest.eu_seguir_para_a_pagina_de_detalhes()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 1966670625,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
       "val": "1",
-      "offset": 38
+      "offset": 13
     }
   ],
-  "location": "CompraComCartaoTest.eu_adicionar_ao_carrinho_a_quantidade(int)"
+  "location": "CompraComCartaoTest.eu_adicionar_unidade_do_produto_ao_carrinho(int)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 10044131971,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -183,13 +86,9 @@ formatter.match({
   "location": "CompraComCartaoTest.eu_selecionar_a_forma_da_pagamento(String)"
 });
 formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "CompraComCartaoTest.check_more_outcomes()"
-});
-formatter.result({
-  "status": "skipped"
+  "duration": 2046381,
+  "error_message": "cucumber.api.PendingException: TODO: implement me\n\tat stepdefs.CompraComCartaoTest.eu_selecionar_a_forma_da_pagamento(CompraComCartaoTest.java:65)\n\tat ✽.And Eu selecionar a forma da pagamento \"Cartão de Crédito\"(CompraComCartao.feature:12)\n",
+  "status": "pending"
 });
 formatter.match({
   "arguments": [
@@ -204,76 +103,55 @@ formatter.result({
   "status": "skipped"
 });
 formatter.scenario({
-  "line": 20,
-  "name": "Compra com Cartão de Crédito",
+  "line": 16,
+  "name": "Comprar duas unidades do produto com Cartão de Crédito",
   "description": "",
-  "id": "realizar-compras-com-cartão-de-crédito;compra-com-cartão-de-crédito;;3",
+  "id": "realizar-compras-com-cartão-de-crédito;comprar-duas-unidades-do-produto-com-cartão-de-crédito",
   "type": "scenario",
-  "keyword": "Scenario Outline"
+  "keyword": "Scenario"
 });
 formatter.step({
-  "line": 7,
-  "name": "Eu esteja logado no sistema",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 8,
-  "name": "Eu devo ver a mensagem de Olá",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 9,
+  "comments": [
+    {
+      "line": 17,
+      "value": "#Given Eu esteja logado no sistema"
+    },
+    {
+      "line": 18,
+      "value": "#Then Eu devo ver a mensagem de Olá Teste"
+    }
+  ],
+  "line": 19,
   "name": "Consultar um produto",
   "keyword": "When "
 });
 formatter.step({
-  "line": 10,
+  "line": 20,
   "name": "Eu seguir para a pagina de detalhes",
   "keyword": "And "
 });
 formatter.step({
-  "line": 11,
-  "name": "Eu adicionar ao carrinho a quantidade 2",
-  "matchedColumns": [
-    0
-  ],
+  "line": 21,
+  "name": "Eu adicionar 2 unidades do produto ao carrinho",
   "keyword": "And "
 });
 formatter.step({
-  "line": 12,
+  "line": 22,
   "name": "Eu selecionar a forma da pagamento \"Cartão de Crédito\"",
   "keyword": "And "
 });
 formatter.step({
-  "line": 13,
-  "name": "check more outcomes",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
+  "line": 23,
   "name": "A mensagem \"Pagar com cartão de crédito\" deve ser exibida.",
   "keyword": "Then "
-});
-formatter.match({
-  "location": "CompraComCartaoTest.eu_esteja_logado_no_sistema()"
-});
-formatter.result({
-  "duration": 23199150850,
-  "status": "passed"
-});
-formatter.match({
-  "location": "CompraComCartaoTest.eu_devo_ver_a_mensagem_de_Olá()"
-});
-formatter.result({
-  "duration": 4546817,
-  "error_message": "cucumber.api.PendingException: TODO: implement me\n\tat stepdefs.CompraComCartaoTest.eu_devo_ver_a_mensagem_de_Olá(CompraComCartaoTest.java:24)\n\tat ✽.Then Eu devo ver a mensagem de Olá(CompraComCartao.feature:8)\n",
-  "status": "pending"
 });
 formatter.match({
   "location": "CompraComCartaoTest.consultar_um_produto()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 20160852879,
+  "error_message": "org.openqa.selenium.NoSuchElementException: Unable to locate element: #h_search\\-input\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.5.3\u0027, revision: \u0027a88d25fe6b\u0027, time: \u00272017-08-29T12:42:44.417Z\u0027\nSystem info: host: \u0027dls210\u0027, ip: \u0027127.0.1.1\u0027, os.name: \u0027Linux\u0027, os.arch: \u0027amd64\u0027, os.version: \u00274.5.0-040500-generic\u0027, java.version: \u00271.8.0_171\u0027\nDriver info: org.openqa.selenium.firefox.FirefoxDriver\nCapabilities [{moz:profile\u003d/tmp/rust_mozprofile.bPVHgdKfk1Qk, rotatable\u003dfalse, timeouts\u003d{implicit\u003d0, pageLoad\u003d300000, script\u003d30000}, pageLoadStrategy\u003dnormal, moz:headless\u003dfalse, platform\u003dLINUX, moz:accessibilityChecks\u003dfalse, moz:useNonSpecCompliantPointerOrigin\u003dfalse, acceptInsecureCerts\u003dfalse, browserVersion\u003d60.0.2, platformVersion\u003d4.5.0-040500-generic, moz:processID\u003d9407, browserName\u003dfirefox, javascriptEnabled\u003dtrue, platformName\u003dLINUX, moz:webdriverClick\u003dtrue}]\nSession ID: 18f95e3a-eeaa-4620-a992-59d9ae6f04c0\n*** Element info: {Using\u003did, value\u003dh_search-input}\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:646)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:416)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:462)\n\tat org.openqa.selenium.By$ById.findElement(By.java:218)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:408)\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\n\tat com.sun.proxy.$Proxy17.sendKeys(Unknown Source)\n\tat pages.HomePage.realizarBusca(HomePage.java:42)\n\tat stepdefs.CompraComCartaoTest.consultar_um_produto(CompraComCartaoTest.java:37)\n\tat ✽.When Consultar um produto(CompraComCartao.feature:19)\n",
+  "status": "failed"
 });
 formatter.match({
   "location": "CompraComCartaoTest.eu_seguir_para_a_pagina_de_detalhes()"
@@ -285,10 +163,10 @@ formatter.match({
   "arguments": [
     {
       "val": "2",
-      "offset": 38
+      "offset": 13
     }
   ],
-  "location": "CompraComCartaoTest.eu_adicionar_ao_carrinho_a_quantidade(int)"
+  "location": "CompraComCartaoTest.eu_adicionar_unidades_do_produto_ao_carrinho(int)"
 });
 formatter.result({
   "status": "skipped"
@@ -301,12 +179,6 @@ formatter.match({
     }
   ],
   "location": "CompraComCartaoTest.eu_selecionar_a_forma_da_pagamento(String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "CompraComCartaoTest.check_more_outcomes()"
 });
 formatter.result({
   "status": "skipped"
@@ -368,7 +240,7 @@ formatter.match({
   "location": "RemoverItemDoCarrinho.eu_possuo_pelo_menos_um_item_adicionado_ao_meu_carrinho_de_compras()"
 });
 formatter.result({
-  "duration": 303800,
+  "duration": 221215,
   "error_message": "cucumber.api.PendingException: TODO: implement me\n\tat stepdefs.RemoverItemDoCarrinho.eu_possuo_pelo_menos_um_item_adicionado_ao_meu_carrinho_de_compras(RemoverItemDoCarrinho.java:13)\n\tat ✽.Given Eu possuo pelo menos um item adicionado ao meu carrinho de compras(RemoverItensdoCarrinho.feature:7)\n",
   "status": "pending"
 });
@@ -396,4 +268,4 @@ formatter.match({
 formatter.result({
   "status": "skipped"
 });
-});                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    });
+});

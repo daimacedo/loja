@@ -19,6 +19,12 @@ public class HomePage extends Util{
 	@FindBy(id="h_usr-signin")
 	WebElement btnEntrar;
 	
+	@FindBy(id="h_search-input")
+	WebElement txtBusca;
+	
+	@FindBy(id="h_search-btn")
+	WebElement btnPesquisar;
+	
 	
 	public HomePage(WebDriver driver) {
 		this.driver = driver;
@@ -30,6 +36,11 @@ public class HomePage extends Util{
 		mouseOver(linkFacaSeuLogin, driver);
 		waitUntilElementTobeClickAble(btnEntrar, wait, driver);
 		btnEntrar.click();
+	}
+	
+	public void realizarBusca(String produtoBuscado){
+		txtBusca.sendKeys(produtoBuscado);
+		btnPesquisar.click();
 	}
 	
 	
