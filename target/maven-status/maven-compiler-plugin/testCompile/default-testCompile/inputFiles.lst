@@ -1,6 +1,13 @@
-/home/daiane.macedo/workspace2/loja/src/test/java/stepdefs/RemoverItemDoCarrinho.java
+/home/daiane.macedo/workspace2/loja/src/test/java/pages/ProdutosPage.java
 /home/daiane.macedo/workspace2/loja/src/test/java/pages/HomePage.java
-/home/daiane.macedo/workspace2/loja/src/test/java/pages/LoginPage.java
-/home/daiane.macedo/workspace2/loja/src/test/java/constants/URLs.java
-/home/daiane.macedo/workspace2/loja/src/test/java/runner/TestRunner.java
+/home/daiane.macedo/workspace2/loja/src/test/java/runner/RunTest.java
+/home/daiane.macedo/workspace2/loja/src/test/java/hooks/SetUp.java
+/home/daiane.macedo/workspace2/loja/src/test/java/constantes/Produtos.java
+/home/daiane.macedo/workspace2/loja/src/test/java/constantes/Mensagens.java
+/home/daiane.macedo/workspace2/loja/src/test/java/constantes/Usuarios.java
 /home/daiane.macedo/workspace2/loja/src/test/java/stepdefs/CompraComCartaoTest.java
+/home/daiane.macedo/workspace2/loja/src/test/java/pages/PagamentoPage.java
+/home/daiane.macedo/workspace2/loja/src/test/java/pages/LoginPage.java
+/home/daiane.macedo/workspace2/loja/src/test/java/stepdefs/RemoverItemDoCarrinhoTest.java
+/home/daiane.macedo/workspace2/loja/src/test/java/constantes/URLs.java
+/home/daiane.macedo/workspace2/loja/src/test/java/util/Util.java

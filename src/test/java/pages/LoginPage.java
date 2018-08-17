@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import constantes.Usuarios;
-import utils.Util;
+import util.Util;
 
 public class LoginPage extends Util{
 	

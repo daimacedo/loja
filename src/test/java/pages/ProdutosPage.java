@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import utils.Util;
+import util.Util;
 
 public class ProdutosPage extends Util{
 
@@ -25,11 +25,7 @@ public class ProdutosPage extends Util{
 	@FindBy(id="btn-buy")
 	WebElement btnComprar;
 	
-	@FindBy(xpath="//select[@class='form-control select__quantity']")
-	WebElement selectQuantidade;
 	
-	@FindBy(id="buy-button")
-	WebElement btnContinuar;
 	
 	public ProdutosPage(WebDriver driver) {
 		this.driver = driver;
@@ -47,21 +43,15 @@ public class ProdutosPage extends Util{
 		return false;
 	}
 	
-	private void selecionaQuantidadeDeProdutos(String quantidade) {
-		Select select = new Select(selectQuantidade);
-		select.selectByValue(quantidade);
-	}
 	
-	
-	public void inserirPES2018noCarrinho(String qtd){
+	public void inserirPES2018noCarrinho(){
 		waitUntilElementTobeClickAble(PES2018, wait, driver);
 		PES2018.click();
 		waitUntilElementTobeClickAble(btnComprar, wait, driver);
 		btnComprar.click();
-		selecionaQuantidadeDeProdutos(qtd);
-		waitUntilElementTobeClickAble(btnContinuar, wait, driver);
-		btnContinuar.click();
 	}
+	
+
 	
 	
 }

@@ -1,6 +1,11 @@
-constants/URLs.class
-stepdefs/CompraComCartaoTest.class
-runner/TestRunner.class
+pages/PagamentoPage.class
+pages/ProdutosPage.class
+constantes/URLs.class
 pages/HomePage.class
-stepdefs/RemoverItemDoCarrinho.class
+stepdefs/RemoverItemDoCarrinhoTest.class
+constantes/Produtos.class
+stepdefs/CompraComCartaoTest.class
+runner/RunTest.class
+constantes/Mensagens.class
+constantes/Usuarios.class
 pages/LoginPage.class
