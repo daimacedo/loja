@@ -1,44 +1,39 @@
 package runner;
 
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+import java.util.concurrent.TimeUnit;
 
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.runner.RunWith;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+import constantes.URLs;
 import cucumber.api.CucumberOptions;
-import cucumber.api.testng.CucumberFeatureWrapper;
-import cucumber.api.testng.TestNGCucumberRunner;
+import cucumber.api.junit.Cucumber;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
-@CucumberOptions(
-        features = "src/test/resources/features",
-        glue = {"stepdefs"},
-        tags = {"~@Ignore"},
-        format = {
-                "pretty",
-                "html:target/cucumber-reports/cucumber-pretty",
-                "json:target/cucumber-reports/json-reports/CucumberTestReport.json",
-                "rerun:target/cucumber-reports/rerun-reports/rerun.txt"
-        })
-public class TestRunner {
-    private TestNGCucumberRunner testNGCucumberRunner;
+@RunWith(Cucumber.class)
+@CucumberOptions(features = "src/test/resources/features", glue = { "stepdefs" }, tags = { "~@Ignore" }, format = {
+		"pretty", "html:target/cucumber-reports/cucumber-pretty",
+		"json:target/cucumber-reports/json-reports/CucumberTestReport.json",
+		"rerun:target/cucumber-reports/rerun-reports/rerun.txt" })
 
-    @BeforeClass(alwaysRun = true)
-    public void setUpClass() throws Exception {
-        testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
-    }
+public class TestRunner extends URLs {
 
-    @Test(groups = "cucumber", description = "Runs Cucumber Feature", dataProvider = "features")
-    public void feature(CucumberFeatureWrapper cucumberFeature) {
-        testNGCucumberRunner.runCucumber(cucumberFeature.getCucumberFeature());
-    }
+	protected static WebDriver driver;
 
-    @DataProvider
-    public Object[][] features() {
-        return testNGCucumberRunner.provideFeatures();
-    }
+	@BeforeClass
+	public static void setUpClass() throws Exception {
+		WebDriverManager.firefoxdriver().setup();
+		driver = new FirefoxDriver();
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.manage().window().maximize();
+		driver.get(HOME_URL);
+	}
 
-    @AfterClass(alwaysRun = true)
-    public void tearDownClass() throws Exception {
-        testNGCucumberRunner.finish();
-    }
+	@AfterClass
+	public static  void tearDownClass() throws Exception {
+		driver.quit();
+	}
 }

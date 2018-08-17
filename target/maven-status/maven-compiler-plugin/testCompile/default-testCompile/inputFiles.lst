@@ -1,1 +1,6 @@
+/home/daiane.macedo/workspace2/loja/src/test/java/stepdefs/RemoverItemDoCarrinho.java
+/home/daiane.macedo/workspace2/loja/src/test/java/pages/HomePage.java
+/home/daiane.macedo/workspace2/loja/src/test/java/pages/LoginPage.java
+/home/daiane.macedo/workspace2/loja/src/test/java/constants/URLs.java
 /home/daiane.macedo/workspace2/loja/src/test/java/runner/TestRunner.java
+/home/daiane.macedo/workspace2/loja/src/test/java/stepdefs/CompraComCartaoTest.java

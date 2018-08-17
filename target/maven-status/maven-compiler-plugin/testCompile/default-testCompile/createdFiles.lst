@@ -1,1 +1,6 @@
+constants/URLs.class
+stepdefs/CompraComCartaoTest.class
 runner/TestRunner.class
+pages/HomePage.class
+stepdefs/RemoverItemDoCarrinho.class
+pages/LoginPage.class
