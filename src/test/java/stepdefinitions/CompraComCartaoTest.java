@@ -2,6 +2,7 @@ package stepdefinitions;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -18,25 +19,12 @@ import pages.LoginPage;
 import pages.PagamentoPage;
 import pages.ProdutosPage;
 
-public class CompraComCartaoTest extends SetUp {
+public class CompraComCartaoTest extends SetUp{
 
-	@Given("^Eu esteja logado no sistema$")
-	public void eu_esteja_logado_no_sistema() throws Throwable {
-		HomePage homePage = new HomePage(driver);
-		homePage.acessarPaginaLogin();
-		LoginPage loginPage = new LoginPage(driver);
-		loginPage.realizaLoginComSucesso();
-	}
-
-	@Then("^Eu devo ver a mensagem de Olá Teste$")
-	public void eu_devo_ver_a_mensagem_de_Olá_Teste() throws Throwable {
-
-		LoginPage loginPage = new LoginPage(driver);
-		assertThat(loginPage.verificaMensagemLogado().startsWith("olá")).isTrue();
-		assertThat(loginPage.verificaMensagemLogado().endsWith("Teste")).isTrue();
-		// Eu sei que vai terminar com "Teste", pois o nome do usuario do meu e-mail é Teste.
-
-
+	
+	@Given("^Eu esteja na home page$")
+	public void eu_esteja_na_home_page() throws Throwable {
+		driver.get(HOME_URL);
 	}
 
 	@When("^Consultar um produto$")
@@ -49,8 +37,6 @@ public class CompraComCartaoTest extends SetUp {
 	public void eu_seguir_para_a_pagina_de_detalhes() throws Throwable {
 		ProdutosPage produtosPage = new ProdutosPage(driver);
 		assertThat(produtosPage.getListaProdutos()).isTrue();
-	
-
 	}
 
 	@When("^Eu adicionar (\\d+) unidade do produto ao carrinho$")
@@ -60,19 +46,32 @@ public class CompraComCartaoTest extends SetUp {
 		CarrinhoDeProdutosPage carrinhoPage = new CarrinhoDeProdutosPage(driver);
 		carrinhoPage.selecionaQuantidadeDeProdutos("1");
 		carrinhoPage.seguirParaPagamento();
-		LoginPage loginPage = new LoginPage(driver);
-		loginPage.realizaLoginComSucesso();
-	}
 
+	}
+	
 	@When("^Eu adicionar (\\d+) unidades do produto ao carrinho$")
 	public void eu_adicionar_unidades_do_produto_ao_carrinho(int arg1) throws Throwable {
 		ProdutosPage produtosPage = new ProdutosPage(driver);
 		produtosPage.inserirPES2018noCarrinho();
 		CarrinhoDeProdutosPage carrinhoPage = new CarrinhoDeProdutosPage(driver);
-		carrinhoPage.selecionaQuantidadeDeProdutos("1");
+		carrinhoPage.selecionaQuantidadeDeProdutos("2");
 		carrinhoPage.seguirParaPagamento();
+	
+	}
+	
+	@When("^Eu realizar login no sistema$")
+	public void eu_realizar_login_no_sistema() throws Throwable {
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.realizaLoginComSucesso();
+	}
+	
+	@Then("^Eu devo ver a mensagem de Olá Teste$")
+	public void eu_devo_ver_a_mensagem_de_Olá_Teste() throws Throwable {
+
+		LoginPage loginPage = new LoginPage(driver);
+		assertThat(loginPage.verificaMensagemLogado().startsWith("olá")).isTrue();
+		assertThat(loginPage.verificaMensagemLogado().endsWith("Teste")).isTrue();
+		// Eu sei que vai terminar com "Teste", pois o nome do usuario do meu e-mail é Teste.
 	}
 
 	@When("^Eu selecionar a forma da pagamento \"([^\"]*)\"$")
@@ -96,5 +95,5 @@ public class CompraComCartaoTest extends SetUp {
 			tearDown();
 		}
 	}
-
+	
 }

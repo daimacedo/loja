@@ -1,11 +1,14 @@
+pages/CarrinhoDeProdutosPage.class
+util/Util.class
 pages/PagamentoPage.class
 pages/ProdutosPage.class
 constantes/URLs.class
 pages/HomePage.class
-stepdefs/RemoverItemDoCarrinhoTest.class
 constantes/Produtos.class
-stepdefs/CompraComCartaoTest.class
 runner/RunTest.class
 constantes/Mensagens.class
 constantes/Usuarios.class
+stepdefinitions/RemoverItemDoCarrinhoTest.class
 pages/LoginPage.class
+stepdefinitions/CompraComCartaoTest.class
+hooks/SetUp.class

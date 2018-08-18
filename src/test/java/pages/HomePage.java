@@ -31,13 +31,6 @@ public class HomePage extends Util{
 		PageFactory.initElements(driver, this);
 	}
 	
-	public void acessarPaginaLogin() throws InterruptedException {
-		waitVisibilityOfElement(linkFacaSeuLogin, wait, driver);
-		mouseOver(linkFacaSeuLogin, driver);
-		waitUntilElementTobeClickAble(btnEntrar, wait, driver);
-		btnEntrar.click();
-	}
-	
 	public void realizarBusca(String produtoBuscado){
 		txtBusca.sendKeys(produtoBuscado);
 		btnPesquisar.click();

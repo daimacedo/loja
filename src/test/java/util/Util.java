@@ -11,11 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Util {
 	
-	public void mouseOver(WebElement e, WebDriver driver) {
-		Actions action = new Actions(driver);
-		action.moveToElement(e).build().perform();	
-	}
-	
+
 	public void waitUntilElementTobeClickAble(WebElement e, WebDriverWait wait, WebDriver driver){
 		wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(e));

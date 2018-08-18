@@ -42,8 +42,6 @@ public class CarrinhoDeProdutosPage extends Util {
 		select.selectByValue(quantidade);
 	}
 	
-	
-	
 	public void seguirParaPagamento() {
 		waitUntilElementTobeClickAble(btnContinuar, wait, driver);
 		btnContinuar.click();
@@ -69,6 +67,7 @@ public class CarrinhoDeProdutosPage extends Util {
 	}
 	
 	public String getMensagemCestaVazia() {
+		waitVisibilityOfElement(labelCestaVazia, wait, driver);
 		return labelCestaVazia.getText();
 	}
 

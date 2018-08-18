@@ -59,10 +59,13 @@ public class LoginPage extends Util{
 	}
 	
 	public String verificaMensagemLogado() {
-		waitVisibilityOfElement(labelOla, wait, driver);
-		waitUntilElementTobeClickAble(labelUserName, wait, driver);
-		String mensagem = labelOla.getText() + " " + labelUserName.getText();
-		return mensagem;
+		
+		//waitVisibilityOfElement(labelOla, wait, driver);
+		//waitUntilElementTobeClickAble(labelUserName, wait, driver);
+		StringBuilder mensagem = new StringBuilder();
+		mensagem.append(labelOla.getText()).append(" ").append(labelUserName.getText());
+		return mensagem.toString();
+	
 	}
 
 }

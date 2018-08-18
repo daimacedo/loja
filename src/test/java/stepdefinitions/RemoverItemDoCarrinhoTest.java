@@ -4,6 +4,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import constantes.Mensagens;
 import constantes.Produtos;
+import constantes.URLs;
 import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -17,6 +18,7 @@ public class RemoverItemDoCarrinhoTest  extends SetUp{
 	
 	@Given("^Eu possuo pelo menos um item adicionado ao meu carrinho de compras$")
 	public void eu_possuo_pelo_menos_um_item_adicionado_ao_meu_carrinho_de_compras() throws Throwable {
+		driver.get(HOME_URL);
 		HomePage homePage = new HomePage(driver);
 		homePage.realizarBusca(Produtos.PES_2018);
 		ProdutosPage produtosPage = new ProdutosPage(driver);
@@ -42,8 +44,8 @@ public class RemoverItemDoCarrinhoTest  extends SetUp{
 	public void o_item_deve_ser_removido_do_meu_carrinho() throws Throwable {
 		CarrinhoDeProdutosPage carrinhoPage = new CarrinhoDeProdutosPage(driver);
 		try {
-		assertThat(carrinhoPage.existeItemNoCarrinho()).isFalse();
-		assertThat(carrinhoPage.getMensagemCestaVazia().contains(Mensagens.MSG_CESTA_VAZIA));
+			assertThat(carrinhoPage.getMensagemCestaVazia().contains(Mensagens.MSG_CESTA_VAZIA));
+			assertThat(carrinhoPage.existeItemNoCarrinho()).isFalse();
 		}
 		catch (Exception e) {
 			System.out.println(e);
