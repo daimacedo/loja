@@ -2,10 +2,20 @@ package stepdefinitions;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+
 import constantes.Mensagens;
 import constantes.Produtos;
 import constantes.URLs;
-import cucumber.api.PendingException;
+import cucumber.api.Scenario;
+import cucumber.api.java.After;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -13,12 +23,13 @@ import hooks.SetUp;
 import pages.CarrinhoDeProdutosPage;
 import pages.HomePage;
 import pages.ProdutosPage;
+import util.Util;
 
-public class RemoverItemDoCarrinhoTest  extends SetUp{
+public class RemoverItemDoCarrinhoTest extends SetUp{
 	
 	@Given("^Eu possuo pelo menos um item adicionado ao meu carrinho de compras$")
 	public void eu_possuo_pelo_menos_um_item_adicionado_ao_meu_carrinho_de_compras() throws Throwable {
-		driver.get(HOME_URL);
+		driver.get(URLs.HOME_URL);
 		HomePage homePage = new HomePage(driver);
 		homePage.realizarBusca(Produtos.PES_2018);
 		ProdutosPage produtosPage = new ProdutosPage(driver);
@@ -34,8 +45,8 @@ public class RemoverItemDoCarrinhoTest  extends SetUp{
 		assertThat(carrinhoPage.existeItemNoCarrinho()).isTrue();
 	}
 
-	@When("^Clicar em remover um item$")
-	public void clicar_em_remover_um_item() throws Throwable {
+	@When("^Eu clicar em remover um item$")
+	public void eu_clicar_em_remover_um_item() throws Throwable {
 		CarrinhoDeProdutosPage carrinhoPage = new CarrinhoDeProdutosPage(driver);
 		carrinhoPage.removerDoCarrinho();
 	}
@@ -50,9 +61,17 @@ public class RemoverItemDoCarrinhoTest  extends SetUp{
 		catch (Exception e) {
 			System.out.println(e);
 		}
-		finally {
-			tearDown();
+	}
+	
+	@After
+	public void tearDown(Scenario cenario) throws IOException {
+		if (cenario.isFailed()) {
+			SimpleDateFormat formatoData = new SimpleDateFormat("yyyyMMddHH:mm:ss");
+			Calendar data = Calendar.getInstance();
+			File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+			FileUtils.copyFile(scrFile, new File("target/screenshots/" + cenario.getName().toString() + "_" + formatoData.format(data.getTime()).toString() + ".png"));
 		}
+		driver.quit();
 	}
 
 }

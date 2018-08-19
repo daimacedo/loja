@@ -7,5 +7,5 @@ Feature: Remover itens do carrinho de Compras
 Scenario: Remover item do carrinho
 Given Eu possuo pelo menos um item adicionado ao meu carrinho de compras
 Then Eu devo visualizar um item no carrinho
-	And Clicar em remover um item
+	When Eu clicar em remover um item
 Then O item deve ser removido do meu carrinho
