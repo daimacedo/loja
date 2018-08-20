@@ -47,16 +47,6 @@ public class CompraComCartaoTest extends SetUp {
 		assertThat(produtosPage.getListaProdutos()).isTrue();
 	}
 
-	@When("^Eu adicionar (\\d+) unidade do produto ao carrinho$")
-	public void eu_adicionar_unidade_do_produto_ao_carrinho(int arg1) throws Throwable {
-		ProdutosPage produtosPage = new ProdutosPage(driver);
-		produtosPage.inserirPES2018noCarrinho();
-		CarrinhoDeProdutosPage carrinhoPage = new CarrinhoDeProdutosPage(driver);
-		carrinhoPage.selecionaQuantidadeDeProdutos("1");
-		carrinhoPage.seguirParaPagamento();
-
-	}
-
 	@When("^Eu adicionar (\\d+) unidade\\(s\\) do produto ao carrinho$")
 	public void eu_adicionar_unidade_s_do_produto_ao_carrinho(String qtdProduto) throws Throwable {
 
