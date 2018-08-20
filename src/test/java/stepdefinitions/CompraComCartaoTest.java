@@ -108,12 +108,10 @@ public class CompraComCartaoTest extends SetUp {
 
 	@After
 	public void tearDown(Scenario cenario) throws IOException {
-//		if (cenario.isFailed()) {
-//			SimpleDateFormat formatoData = new SimpleDateFormat("yyyyMMddHH:mm:ss");
-//			Calendar data = Calendar.getInstance();
-//			File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-//			FileUtils.copyFile(scrFile, new File("target/screenshots/" + cenario.getName().toString() + "_" + formatoData.format(data.getTime()).toString() + ".png"));
-//		}
+		if (cenario.isFailed()) {
+			Util util = new Util();
+			util.takeScreeShot(driver, cenario);
+		}
 		driver.quit();
 	}
 

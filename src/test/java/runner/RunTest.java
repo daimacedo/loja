@@ -9,7 +9,7 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/resources/features", 
 glue = { "stepdefinitions" }, 
-tags = { "@CompraComCartao , @RemocaoItensDoCarrinho" }, 
+tags = { "@CompraComCartao,@RemocaoItensDoCarrinho" }, 
 //format = {
 //		"pretty", "html:target/cucumber-reports/report"})
 plugin = {"json:target/cucumber-reports/json-report/cucumber.json"})
