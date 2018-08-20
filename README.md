@@ -14,4 +14,4 @@ Notas:
 
 - Os testes de compra falharam, pois o site trava com sistema de captcha a execução de testes automaticos no navegador. Para facilitar essa visualização do erro, a aplicação vai tirar um print quando a execução falhar, na imagem vai ser possivel visualizar o captcha, que é o que impede o teste de seguir com o login. Diretório das evidências dos erros: `target/screenshots`
 
-- Os testes relacionados a compra com cartão de crédito, foram gerados utilizando DataTable do cucumber, deste modo, foi escrito somente um cenário de compra, alterando a quantidade de produtos comprados, por isso no report terão dois cenrios com o mesmo nome, mas ao navegar dentro deles, poder reparar no step que a quantidade de produtos comprado foi diferente.
+- Os testes relacionados a compra com cartão de crédito, foram gerados utilizando DataTable do cucumber, deste modo, foi escrito somente um cenário de compra, alterando a quantidade de produtos comprados, por isso no report terão dois cenários com o mesmo nome, mas ao navegar dentro deles, poderá reparar no step que a quantidade de produtos comprado foi diferente.
