@@ -54,7 +54,6 @@ public class CompraComCartaoTest extends SetUp {
 		produtosPage.inserirPES2018noCarrinho();
 		CarrinhoDeProdutosPage carrinhoPage = new CarrinhoDeProdutosPage(driver);
 		carrinhoPage.selecionaQuantidadeDeProdutos(qtdProduto);
-		Thread.sleep(3000);
 		carrinhoPage.seguirParaPagamento();
 
 	}
